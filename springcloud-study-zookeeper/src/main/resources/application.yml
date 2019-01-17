@@ -1,0 +1,11 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: springcloud-study-zookeeper
+  cloud:
+    consul:
+      host:
+      port:
+      discovery:
+        hostname:

@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: springcloud-study-eureka
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  server:
+    ### 测试和开发环境关闭自我保护机制，保证服务不可用时 及时退出
+    enable-self-preservation: false
+    ### 每2秒检查一次
+    eviction-interval-timer-in-ms: 2000
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka
+    register-with-eureka: true
+    fetch-registry: true
