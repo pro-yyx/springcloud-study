@@ -1,0 +1,20 @@
+server:
+  port: 8086
+spring:
+  application:
+    ### 这个名字要与git上config-server的文件名一致
+    name: springcloud-microservice-study-config-client
+  cloud:
+    config:
+      ### 读取后缀
+      profile: sit
+      discovery:
+        ### 读取config-server在eureka上的注册名称
+        service-id: springcloud-microservice-study-config-server
+        ### 开启读取权限
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka
+
