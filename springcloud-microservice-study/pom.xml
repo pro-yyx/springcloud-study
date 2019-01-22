@@ -14,6 +14,7 @@
         <module>springcloud-microservice-study-common</module>
         <module>springcloud-microservice-study-config-server</module>
         <module>springcloud-microservice-study-config-client</module>
+        <module>springcloud-microservice-study-zuul</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -21,7 +22,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.0.RELEASE</version>
+        <version>2.0.8.RELEASE</version>
     </parent>
 
     <build>
@@ -45,7 +46,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RELEASE</version>
+                <version>Greenwich.RC2</version>
                 <type>pom</type>
                 <scope>import</scope><!--已经继承了springboot-parent，只能通过import来继续继承springcloud -->
             </dependency>

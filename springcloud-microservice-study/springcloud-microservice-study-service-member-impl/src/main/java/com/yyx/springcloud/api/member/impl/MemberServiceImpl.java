@@ -43,4 +43,15 @@ public class MemberServiceImpl implements MemberService {
         userDto.setName("这事测试sleep");
         return BaseResult.success(userDto);
     }
+
+    @Override
+    public BaseResult<String> queryMemberServiceByHystrix() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("member微服务接口的线程:"+Thread.currentThread().getName());
+        return BaseResult.success("这是通过类的方式使用hystrix");
+    }
 }

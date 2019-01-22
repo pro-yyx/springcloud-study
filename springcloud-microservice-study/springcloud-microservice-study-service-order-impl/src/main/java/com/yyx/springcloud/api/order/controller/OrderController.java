@@ -45,8 +45,8 @@ public class OrderController {
      * @return
      */
     @RequestMapping(value = "queryMemberFromApiByIdOfSleepHystrix",method = RequestMethod.GET)
- //   @HystrixCommand(fallbackMethod = "queryMemberFromApiByIdOfSleepHystrixFallback")
-    @HystrixCommand
+    @HystrixCommand(fallbackMethod = "queryMemberFromApiByIdOfSleepHystrixFallback")
+    //@HystrixCommand
     public BaseResult<UserDto> queryMemberFromApiByIdOfSleepHystrix(@RequestParam("id") Integer id) {
         log.info("queryMemberFromApiByIdOfSleepHystrix -->线程池名称:{}",Thread.currentThread().getName());
         return memberFeign.queryMemberByIdOfSleep(id);
@@ -62,5 +62,12 @@ public class OrderController {
     public BaseResult queryOrder() {
         log.info("queryMemberFromApiByIdOfSleepHystrixFallback -->线程池名称:{}",Thread.currentThread().getName());
         return BaseResult.success("这是order服务其他正常方法");
+    }
+
+    @RequestMapping(value = "queryMemberByHystrix",method = RequestMethod.GET)
+    public BaseResult queryMemberByHystrix() {
+        log.info("orderController-->queryMemberByHystrix -->线程池名称:{}",Thread.currentThread().getName());
+        BaseResult<String> stringBaseResult = memberFeign.queryMemberServiceByHystrix();
+        return stringBaseResult;
     }
 }

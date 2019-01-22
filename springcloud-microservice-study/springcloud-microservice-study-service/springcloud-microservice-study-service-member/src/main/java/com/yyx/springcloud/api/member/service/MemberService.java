@@ -18,4 +18,7 @@ public interface MemberService {
 
     @RequestMapping(value = "member/queryMemberByIdOfSleep",method = RequestMethod.GET)
     BaseResult<UserDto> queryMemberByIdOfSleep(@RequestParam("id") Integer id) ;
+
+    @RequestMapping(value = "member/queryMemberServiceByHystrix",method = RequestMethod.GET)
+    BaseResult<String> queryMemberServiceByHystrix() ;
 }

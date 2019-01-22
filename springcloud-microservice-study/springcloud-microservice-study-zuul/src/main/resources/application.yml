@@ -1,0 +1,19 @@
+server:
+  port: 80
+spring:
+  application:
+    name: springcloud-microservice-study-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka
+    fetch-registry: true
+    register-with-eureka: true
+zuul:
+  routes:
+    api-member:
+      path: /api-member/**
+      serverId: springcloud-microservice-study-service-member
+    api-order:
+      path: /api-order/**
+      serverId: springcloud-microservice-study-service-order
