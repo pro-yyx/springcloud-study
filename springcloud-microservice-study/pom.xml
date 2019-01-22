@@ -25,7 +25,11 @@
         <version>2.0.8.RELEASE</version>
     </parent>
 
+
+
+
     <build>
+
       <pluginManagement>
           <plugins>
               <plugin>
@@ -46,7 +50,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.RC2</version>
+                <version>Finchley.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope><!--已经继承了springboot-parent，只能通过import来继续继承springcloud -->
             </dependency>

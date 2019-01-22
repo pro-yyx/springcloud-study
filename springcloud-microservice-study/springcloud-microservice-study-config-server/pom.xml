@@ -11,6 +11,41 @@
 
     <artifactId>springcloud-microservice-study-config-server</artifactId>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profile.name>dev</profile.name>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <filters>${project.basedir}/src/main/resources/dev/*</filters>
+            </build>
+        </profile>
+
+        <profile>
+            <id>sit</id>
+            <properties>
+                <profile.name>sit</profile.name>
+            </properties>
+            <build>
+                <filters>${project.basedir}/src/main/resources/sit/*</filters>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>/${project.basedir}src/main/resouces/${profile.name}</directory>
+                <includes>**/*</includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

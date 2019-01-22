@@ -2,22 +2,20 @@ package com.yyx.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * @Description:
  * @Auther: yinyuxin
- * @Date: 2019/1/22 18:50
+ * @Date: 2019/1/22 22:52
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableZuulProxy
-@EnableDiscoveryClient
-public class ZuulStarter {
+public class MemberStarter {
+    public MemberStarter() {
+    }
 
     public static void main(String[] args) {
-        SpringApplication.run(ZuulStarter.class, args);
+        SpringApplication.run(MemberStarter.class, args);
     }
 }

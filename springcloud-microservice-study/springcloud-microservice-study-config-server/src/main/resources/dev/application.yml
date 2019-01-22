@@ -1,0 +1,18 @@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka
+spring:
+  application:
+    name: springcloud-microservice-study-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yinyuxin/springcloud-config.git
+          search-paths:
+          - config
+      label: master
+server:
+  port: 8082

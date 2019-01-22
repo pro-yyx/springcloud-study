@@ -19,7 +19,6 @@ ribbon:
   ReadTimeout: 5000
   ###指的是建立连接所用的时间
   ConnectTimeout: 1400
-
 ### 开启hystrix断路器
 feign:
   hystrix:

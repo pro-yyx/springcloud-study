@@ -60,7 +60,7 @@ public class OrderController {
 
     @RequestMapping(value = "queryOrder",method = RequestMethod.GET)
     public BaseResult queryOrder() {
-        log.info("queryMemberFromApiByIdOfSleepHystrixFallback -->线程池名称:{}",Thread.currentThread().getName());
+        log.info("queryOrder -->线程池名称:{}",Thread.currentThread().getName());
         return BaseResult.success("这是order服务其他正常方法");
     }
 
