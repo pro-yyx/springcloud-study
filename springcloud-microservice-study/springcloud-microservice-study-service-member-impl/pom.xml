@@ -21,7 +21,12 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <build>
-                <filters>${project.basedir}/src/main/resource/dev/*</filters>
+                <resources>
+                    <resource>
+                        <directory>${project.basedir}/src/main/resources/${profile.name}</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
             </build>
         </profile>
 
@@ -31,7 +36,12 @@
                 <profile.name>sit</profile.name>
             </properties>
             <build>
-                <filters>${project.basedir}/src/main/resource/sit/*</filters>
+                <resources>
+                    <resource>
+                        <directory>${project.basedir}/src/main/resources/${profile.name}</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
             </build>
         </profile>
     </profiles>
@@ -39,8 +49,10 @@
     <build>
         <resources>
             <resource>
-                <directory>/${project.basedir}src/main/resouces/${profile.name}</directory>
-                <includes>**/*</includes>
+                <directory>${project.basedir}/src/main/resources/${profile.name}</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
                 <filtering>true</filtering>
             </resource>
         </resources>
@@ -52,6 +64,10 @@
             <groupId>com.yyx.springcloud</groupId>
             <artifactId>springcloud-microservice-study-service-member</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
 
 

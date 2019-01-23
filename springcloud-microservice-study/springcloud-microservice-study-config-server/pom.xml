@@ -21,7 +21,12 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <build>
-                <filters>${project.basedir}/src/main/resources/dev/*</filters>
+                <resources>
+                    <resource>
+                        <directory>/${project.basedir}src/main/resources/${profile.name}</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
             </build>
         </profile>
 
@@ -31,16 +36,24 @@
                 <profile.name>sit</profile.name>
             </properties>
             <build>
-                <filters>${project.basedir}/src/main/resources/sit/*</filters>
+                <resources>
+                    <resource>
+                        <directory>/${project.basedir}src/main/resources/${profile.name}</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
             </build>
         </profile>
     </profiles>
 
     <build>
+        <finalName>springcloud-microservice-study-config-server</finalName>
         <resources>
             <resource>
-                <directory>/${project.basedir}src/main/resouces/${profile.name}</directory>
-                <includes>**/*</includes>
+                <directory>src/main/resources/${profile.name}</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
                 <filtering>true</filtering>
             </resource>
         </resources>

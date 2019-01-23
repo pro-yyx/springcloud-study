@@ -1,0 +1,17 @@
+
+spring:
+  application:
+    name: springcloud-microservice-study-service-member
+  cloud:
+    config:
+      profile: '@profile.name@'
+      discovery:
+        enabled: true
+        service-id: springcloud-microservice-study-config-server
+server:
+  port: 8085
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka/
+

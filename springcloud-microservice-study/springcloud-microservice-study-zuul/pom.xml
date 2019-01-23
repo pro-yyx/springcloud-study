@@ -11,10 +11,64 @@
 
     <artifactId>springcloud-microservice-study-zuul</artifactId>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profile.name>dev</profile.name>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>/${project.basedir}/src/main/resources/${profile.name}</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+
+        <profile>
+            <id>sit</id>
+            <properties>
+                <profile.name>sit</profile.name>
+            </properties>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>${project.basedir}/src/main/resources/${profile.name}</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        <finalName>springcloud-microservice-study-zuul</finalName>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources/${profile.name}</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Auther: yinyuxin
  * @Date: 2019/1/22 22:13
  */
-@Component
+//@Component
 public class TokenFilter extends ZuulFilter {
 
     /**

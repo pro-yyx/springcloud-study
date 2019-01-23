@@ -14,7 +14,9 @@ import org.springframework.stereotype.Component;
 public class MemberFeignFallback implements MemberFeign {
     @Override
     public UserDto queryMemberById(Integer id) {
-        return null;
+        UserDto userDto = new UserDto();
+        userDto.setName("这是降级过来的");
+        return userDto;
     }
 
     @Override

@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @Auther: yinyuxin
  * @Date: 2019/1/10 13:20
  */
-@FeignClient(name = "springcloud-microservice-study-service-member",fallback = MemberFeignFallback.class)
+@FeignClient(name = "springcloud-microservice-study-zuul/api-member",fallback = MemberFeignFallback.class)
 public interface MemberFeign extends MemberService {
 
 }
