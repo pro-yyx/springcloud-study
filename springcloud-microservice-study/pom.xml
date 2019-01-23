@@ -13,7 +13,6 @@
         <module>springcloud-microservice-study-service-order-impl</module>
         <module>springcloud-microservice-study-common</module>
         <module>springcloud-microservice-study-config-server</module>
-        <module>springcloud-microservice-study-config-client</module>
         <module>springcloud-microservice-study-zuul</module>
     </modules>
     <packaging>pom</packaging>
