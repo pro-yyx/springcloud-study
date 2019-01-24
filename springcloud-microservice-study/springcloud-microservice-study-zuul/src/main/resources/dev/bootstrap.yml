@@ -13,3 +13,13 @@ eureka:
       defaultZone: http://127.0.0.1:8080/eureka/
 server:
   port: 8082
+
+swaggerresources:
+  list:
+    - {name: api-member-swagger,location: /api-member/v2/api-docs,version: 1.0}
+    - {name: api-order-swagger,location: /api-order/v2/api-docs,version: 1.0}
+
+swagger:
+  description: 这是description描述
+  version: 1.0
+  title: 这是title标题

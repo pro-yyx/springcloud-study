@@ -1,5 +1,6 @@
 package com.yyx.springcloud;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -16,6 +17,7 @@ import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableZuulProxy
+@EnableSwagger2Doc
 public class ZuulStarter {
 
     public static void main(String[] args) {
@@ -27,4 +29,5 @@ public class ZuulStarter {
     public ZuulProperties setZuulProperties() {
         return new ZuulProperties();
     }
+
 }

@@ -1,5 +1,6 @@
 package com.yyx.springcloud.api.order;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +19,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableEurekaClient
 @EnableHystrix
+@EnableSwagger2Doc
 public class OrderStarter {
 
 

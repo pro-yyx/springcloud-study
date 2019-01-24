@@ -80,6 +80,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+        </dependency>
+
 
         <!--jdk9以上需要引入 jaxb模块引用 - start -->
         <dependency>

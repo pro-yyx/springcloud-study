@@ -1,5 +1,6 @@
 package com.yyx.springcloud;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +16,7 @@ import org.springframework.cloud.netflix.hystrix.HystrixProperties;
  */
 @SpringBootApplication
 @EnableEurekaClient
+@EnableSwagger2Doc
 public class MemberStarter {
     public MemberStarter() {
     }
